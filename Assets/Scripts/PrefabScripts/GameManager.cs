@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
     private static GameManager mStance;
     public static GameManager gInstance => mStance;
 
+    // NOTE: maybe create a TimeManager...?
+    private float DaysPassed = 0;
+
     [SerializeField]
     private Player mPlayer;
 
@@ -14,7 +17,17 @@ public class GameManager : MonoBehaviour
         mStance = this;
     }
 
-    void Update()
+    //void Update()
+    //{
+    //}
+
+    public void UpdatePlayerMoney()
     {
+        this.mPlayer.Money += InitialValues.InitialMoneyEarned;
+    }
+
+    public void PassDayTime()
+    {
+        this.DaysPassed += InitialValues.AmountToPassTime;
     }
 }
