@@ -1,13 +1,20 @@
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager mStance;
     public static GameManager gInstance => mStance;
 
+    [SerializeField]
+    private TextMeshProUGUI currentMoney;
+
+    [SerializeField]
+    private TextMeshProUGUI currentDay;
+
     // NOTE: maybe create a TimeManager...?
-    private float DaysPassed = 0;
+    public float DaysPassed { get; private set; } = InitialValues.InitialDay;
 
     [SerializeField]
     private Player mPlayer;
@@ -17,17 +24,19 @@ public class GameManager : MonoBehaviour
         mStance = this;
     }
 
-    //void Update()
-    //{
-    //}
-
     public void UpdatePlayerMoney()
     {
-        this.mPlayer.Money += InitialValues.InitialMoneyEarned;
+        this.mPlayer.UpdateMoney(InitialValues.InitialMoneyEarned);
+    }
+
+    public void UpdateMoneyOnGui()
+    {
+        this.currentMoney.text = this.mPlayer.GetMoney().ToString();
     }
 
     public void PassDayTime()
     {
         this.DaysPassed += InitialValues.AmountToPassTime;
+        this.currentDay.text = ((int)this.DaysPassed + 1).ToString();
     }
 }
