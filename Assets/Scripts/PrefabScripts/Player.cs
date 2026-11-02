@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float Money = InitialValues.InitialPlayerMoney;
-    public float BankAccount = InitialValues.InitialMoneyInAccount;
+    private float Money = InitialValues.InitialPlayerMoney;
+    private float BankAccount = InitialValues.InitialMoneyInAccount;
+
+    public float GetMoney()
+    {
+        return this.Money;
+    }
+
+    public void UpdateMoney(float amount)
+    {
+        this.Money += amount;
+    }
 }
