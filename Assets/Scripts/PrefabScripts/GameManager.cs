@@ -7,17 +7,13 @@ public class GameManager : MonoBehaviour
     private static GameManager mStance;
     public static GameManager gInstance => mStance;
 
-    [SerializeField]
-    private TextMeshProUGUI currentMoney;
+    public TextMeshProUGUI currentMoney;
+    public TextMeshProUGUI currentDay;
 
-    [SerializeField]
-    private TextMeshProUGUI currentDay;
-
+    public Player mPlayer;
+    
     // NOTE: maybe create a TimeManager...?
     public float DaysPassed { get; private set; } = InitialValues.InitialDay;
-
-    [SerializeField]
-    private Player mPlayer;
 
     void Start()
     {
@@ -27,6 +23,7 @@ public class GameManager : MonoBehaviour
     public void UpdatePlayerMoney()
     {
         this.mPlayer.UpdateMoney(InitialValues.InitialMoneyEarned);
+        DataTransferer.gInstance.SetPlayerMoney(this.mPlayer.GetMoney());
     }
 
     public void UpdateMoneyOnGui()
@@ -34,9 +31,15 @@ public class GameManager : MonoBehaviour
         this.currentMoney.text = this.mPlayer.GetMoney().ToString();
     }
 
+    public int GetFormatedDay()
+    {
+        return (int)this.DaysPassed + 1;
+    }
+
     public void PassDayTime()
     {
         this.DaysPassed += InitialValues.AmountToPassTime;
-        this.currentDay.text = ((int)this.DaysPassed + 1).ToString();
+        this.currentDay.text = this.GetFormatedDay().ToString();
+        DataTransferer.gInstance.SetCurrentDay(this.GetFormatedDay());
     }
 }

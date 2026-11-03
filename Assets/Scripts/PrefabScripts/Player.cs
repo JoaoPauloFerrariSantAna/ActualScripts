@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
     private float Money = InitialValues.InitialPlayerMoney;
+    [SerializeField]
     private float BankAccount = InitialValues.InitialMoneyInAccount;
 
     public float GetMoney()
