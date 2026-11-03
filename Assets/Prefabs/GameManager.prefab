@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb32b67f73aa1443b875cf81a15c93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  mPlayer: {fileID: 8068200250094162406, guid: eec1143ef7e35574088157e478121fbd, type: 3}
+  currentMoney: {fileID: 0}
+  currentDay: {fileID: 0}
+  mPlayer: {fileID: 0}
