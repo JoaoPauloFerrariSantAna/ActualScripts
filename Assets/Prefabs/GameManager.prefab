@@ -41,9 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3456715445565608424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb32b67f73aa1443b875cf81a15c93b, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e3b3cd556061748b4dca69f63c57ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  currentMoney: {fileID: 0}
-  currentDay: {fileID: 0}
   mPlayer: {fileID: 0}
