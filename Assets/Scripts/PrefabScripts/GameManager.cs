@@ -15,15 +15,19 @@ public class GameManager : MonoBehaviour
     // NOTE: maybe create a TimeManager...?
     public float DaysPassed { get; private set; } = InitialValues.InitialDay;
 
+    // NOTE: maybe a money manager
+    public float PriceToFurnishHouse { get; private set; } = InitialValues.InitialPriceToFurnish;
+
     void Start()
     {
         mStance = this;
+        this.DaysPassed = DataTransferers.gInstance.GetWorkedDays();
     }
 
     public void UpdatePlayerMoney()
     {
         this.mPlayer.UpdateMoney(InitialValues.InitialMoneyEarned);
-        DataTransferer.gInstance.SetPlayerMoney(this.mPlayer.GetMoney());
+        DataTransferers.gInstance.SetPlayerMoney(this.mPlayer.GetMoney());
     }
 
     public void UpdateMoneyOnGui()
@@ -40,6 +44,11 @@ public class GameManager : MonoBehaviour
     {
         this.DaysPassed += InitialValues.AmountToPassTime;
         this.currentDay.text = this.GetFormatedDay().ToString();
-        DataTransferer.gInstance.SetCurrentDay(this.GetFormatedDay());
+        DataTransferers.gInstance.SetWorkedDays(this.GetFormatedDay());
+    }
+
+    public void UpdatePriceToFurnishIt()
+    {
+        this.PriceToFurnishHouse /= InitialValues.FurnishPriceMultiplier;
     }
 }
