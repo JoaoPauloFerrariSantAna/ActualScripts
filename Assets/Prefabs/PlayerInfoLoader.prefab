@@ -41,8 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5283074043754932574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55004f661a34e654db211420f3fe9f48, type: 3}
+  m_Script: {fileID: 11500000, guid: eaedb991bdadecc42a3fda8bab629bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataShopLoader
-  currentMoney: {fileID: 0}
-  currentDay: {fileID: 0}
+  whereToLoadThePrice: {fileID: 0}
