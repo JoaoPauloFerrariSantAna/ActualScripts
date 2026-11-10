@@ -8,17 +8,23 @@ public class SceneChanger : MonoBehaviour
 
     public void ChangeIntoMainScene()
     {
-        SceneManager.LoadSceneAsync(scenes[0]);
+        SceneManager.LoadScene(scenes[0]);
     }
 
     public void ChangeIntoShop()
     {
-        SceneManager.LoadSceneAsync(scenes[1]);
+        SceneManager.LoadScene(scenes[1]);
+    }
+
+    public void ChangeIntoStatistics()
+    {
+        SceneManager.LoadScene(scenes[2]);
     }
 
     public void Start()
     {
         scenes.Add(0);
         scenes.Add(SceneManager.GetActiveScene().buildIndex + 1);
+        scenes.Add(SceneManager.GetActiveScene().buildIndex + 2);
     }
 }
