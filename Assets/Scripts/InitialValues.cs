@@ -11,4 +11,5 @@ public static class InitialValues
     public const float FurnishPriceMultiplier = 0.65f;
     public const int InitialDay = 0;
     public const int MaxInGameDays = 7;
+    public const int MinimalTimesToFurnishHouseToSell = 3;
 }
