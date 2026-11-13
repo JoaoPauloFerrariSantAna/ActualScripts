@@ -10,9 +10,9 @@ public class FurnishHouseUpgrade : MonoBehaviour
         this.button = this.GetComponent<Button>();
     }
 
-    public void ReactToOnEnter()
+    public void Update()
     {
-        if (GameManager.gInstance.mPlayer.GetMoney() >= GameManager.gInstance.PriceToFurnishHouse)
+        if (GameManager.gInstance.mPlayer.GetMoney() >= GameManager.gInstance.mHouse.CurrentPrice)
         {
             this.button.interactable = true;
             return;
@@ -23,8 +23,9 @@ public class FurnishHouseUpgrade : MonoBehaviour
 
     public void FurnishIt()
     {
-        GameManager.gInstance.mPlayer.UpdateMoney(GameManager.gInstance.PriceToFurnishHouse * (-1));
-        GameManager.gInstance.UpdatePriceToFurnishIt();
+        GameManager.gInstance.mPlayer.UpdateMoney(GameManager.gInstance.mHouse.CurrentPrice * (-1));
+        GameManager.gInstance.mHouse.UpdatePrice();
+        GameManager.gInstance.mHouse.NotifyFurnishing();
         DataTransferer.gInstance.SetPlayerMoney(GameManager.gInstance.mPlayer.GetMoney());
     }
 }

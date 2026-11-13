@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,6 @@ public class PriceLoader : MonoBehaviour
     // because we're going to modify the price
     private void Update()
     {
-        this.whereToLoadThePrice.text = GameManager.gInstance.PriceToFurnishHouse.ToString();
+        this.whereToLoadThePrice.text = Math.Round(GameManager.gInstance.mHouse.CurrentPrice, 2).ToString();
     }
 }
