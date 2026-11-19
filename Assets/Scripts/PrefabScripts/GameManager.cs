@@ -1,6 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,9 +10,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI currentDay;
 
     public Player mPlayer;
-    
-    // NOTE: maybe create a TimeManager...?
-    public float DaysPassed { get; private set; } = InitialValues.InitialDay;
+    public House mHouse;
+
+    public static float IncrementAmount { get; private set; } = Constants.InitialMoneyEarned;
+
+    public static int HousesSold { get; private set; } = 0;
 
     // NOTE: maybe a money manager
     public float PriceToFurnishHouse { get; private set; } = InitialValues.InitialPriceToFurnish;
