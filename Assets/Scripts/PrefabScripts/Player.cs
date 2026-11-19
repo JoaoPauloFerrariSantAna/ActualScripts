@@ -3,9 +3,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float Money = InitialValues.InitialPlayerMoney;
+    private float Money = Constants.InitialPlayerMoney;
     [SerializeField]
-    private float BankAccount = InitialValues.InitialMoneyInAccount;
+    private float BankAccount = Constants.InitialMoneyInAccount;
 
     public float GetMoney()
     {
@@ -15,5 +15,15 @@ public class Player : MonoBehaviour
     public void UpdateMoney(float amount)
     {
         this.Money += amount;
+    }
+
+    public float GetBankAccount()
+    {
+        return this.BankAccount;
+    }
+
+    public void SellHouse(float housePrice)
+    {
+        this.BankAccount += housePrice;
     }
 }
