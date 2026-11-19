@@ -33,7 +33,8 @@ public class House : MonoBehaviour
 
     public void Sell()
     {
-        TimesFurnished = 0;
-        this.CurrentPrice = InitialValues.InitialPriceToFurnish;
+        this.TimesFurnished = 0;
+        this.CurrentPrice = Constants.InitialPriceToFurnish;
+        IsSellable = false;
     }
 }
