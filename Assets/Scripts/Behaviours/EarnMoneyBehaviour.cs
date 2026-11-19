@@ -12,7 +12,7 @@ public class EarnMoneyBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if ((int)GameManager.gInstance.DaysPassed == InitialValues.MaxInGameDays)
+        if ((int)GameManager.DaysPassed == GameManager.MaxDays)
         {
             this.button.interactable = false;
         }
@@ -20,8 +20,8 @@ public class EarnMoneyBehaviour : MonoBehaviour
 
     public void EarnMoney()
     {
-        GameManager.gInstance.UpdatePlayerMoney();
-        GameManager.gInstance.UpdateMoneyOnGui();
+        GameManager.gInstance.mPlayer.UpdateMoney(GameManager.IncrementAmount);
         GameManager.gInstance.PassDayTime();
+        DataTransferer.gInstance.SetPlayerMoney(GameManager.gInstance.mPlayer.GetMoney());
     }
 }
