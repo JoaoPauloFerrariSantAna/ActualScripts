@@ -50,4 +50,9 @@ public class GameManager : MonoBehaviour
     {
         IncrementAmount += Constants.MoneyBoost;
     }
+
+    public void AddMoreWorkDays()
+    {
+        MaxDays += Constants.DaysToAdd;
+    }
 }
