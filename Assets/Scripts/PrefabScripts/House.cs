@@ -15,20 +15,20 @@ public class House : MonoBehaviour
     {
         TimesFurnished++;
 
-        if (TimesFurnished >= InitialValues.MinimalTimesToFurnishHouseToSell)
+        if (TimesFurnished >= Constants.MinimalTimesToFurnishHouseToSell)
         {
-            this.IsSellable = true;
+            IsSellable = true;
         }
     }
 
     public void UpdatePrice()
     {
-        this.CurrentPrice += (this.CurrentPrice * InitialValues.FurnishPriceMultiplier);
+        this.CurrentPrice += (this.CurrentPrice * Constants.FurnishPriceMultiplier);
     }
 
     public bool IsHouseSellable()
     {
-        return this.IsSellable;
+        return IsSellable;
     }
 
     public void Sell()
