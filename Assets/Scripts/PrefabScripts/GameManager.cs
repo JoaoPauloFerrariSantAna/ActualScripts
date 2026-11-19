@@ -46,8 +46,8 @@ public class GameManager : MonoBehaviour
         DaysPassed += Constants.AmountToPassTime;
     }
 
-    public void UpdatePriceToFurnishIt()
+    public void IncrementDailyEarnings()
     {
-        this.PriceToFurnishHouse /= InitialValues.FurnishPriceMultiplier;
+        IncrementAmount += Constants.MoneyBoost;
     }
 }
