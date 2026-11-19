@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 583851633961363041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb538c65ea25f048a5f5be01aebb66d, type: 3}
+  m_Script: {fileID: 11500000, guid: bae9e99e50a382243aaa3108bdd31c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::House
   CurrentPrice: 50
