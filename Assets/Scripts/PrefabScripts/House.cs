@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
-    private static int TimesFurnished = 0;
+    private int TimesFurnished = 0;
+    private bool IsSellable;
+    public float CurrentPrice = Constants.InitialPriceToFurnish;
 
-    private bool IsSellable = false;
+    public void Start()
+    {
+        this.IsSellable = false;
+    }
     
-    public float CurrentPrice { get; private set; } = InitialValues.InitialPriceToFurnish;
-
     public void NotifyFurnishing()
     {
         TimesFurnished++;
