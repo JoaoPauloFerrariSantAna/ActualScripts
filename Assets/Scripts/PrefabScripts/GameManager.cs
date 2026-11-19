@@ -20,13 +20,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         mStance = this;
-        this.DaysPassed = DataTransferers.gInstance.GetWorkedDays();
+        DataTransferer.gInstance.SetCurrentDay(this.GetFormatedDay());
     }
 
-    public void UpdatePlayerMoney()
+    void Update()
     {
-        this.mPlayer.UpdateMoney(InitialValues.InitialMoneyEarned);
-        DataTransferers.gInstance.SetPlayerMoney(this.mPlayer.GetMoney());
+        DataStatisticTransferer.gInstance.SetCurrentDay(this.GetFormatedDay());
+        DataStatisticTransferer.gInstance.SetHousesSold(HousesSold);
+        DataStatisticTransferer.gInstance.SetPlayerMoney((float)Math.Round(this.mPlayer.GetMoney(), 2));
+        DataStatisticTransferer.gInstance.SetPlayerBankAccount((float)Math.Round(this.mPlayer.GetBankAccount(), 2));
     }
 
     public void UpdateMoneyOnGui()
