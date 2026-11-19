@@ -38,14 +38,12 @@ public class GameManager : MonoBehaviour
 
     public int GetFormatedDay()
     {
-        return (int)this.DaysPassed + 1;
+        return (int)DaysPassed + 1;
     }
 
     public void PassDayTime()
     {
-        this.DaysPassed += InitialValues.AmountToPassTime;
-        this.currentDay.text = this.GetFormatedDay().ToString();
-        DataTransferers.gInstance.SetWorkedDays(this.GetFormatedDay());
+        DaysPassed += Constants.AmountToPassTime;
     }
 
     public void UpdatePriceToFurnishIt()
