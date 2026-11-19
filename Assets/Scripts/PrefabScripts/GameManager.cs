@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
         DataStatisticTransferer.gInstance.SetPlayerBankAccount((float)Math.Round(this.mPlayer.GetBankAccount(), 2));
     }
 
-    public void UpdateMoneyOnGui()
+    public void UpdateAmountOfHousesSold()
     {
-        this.currentMoney.text = this.mPlayer.GetMoney().ToString();
+        HousesSold++;
     }
 
     public int GetFormatedDay()
