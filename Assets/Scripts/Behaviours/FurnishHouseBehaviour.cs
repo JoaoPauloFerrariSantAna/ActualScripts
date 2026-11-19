@@ -24,8 +24,9 @@ public class FurnishHouseUpgrade : MonoBehaviour
     public void FurnishIt()
     {
         GameManager.gInstance.mPlayer.UpdateMoney(GameManager.gInstance.mHouse.CurrentPrice * (-1));
+        GameManager.gInstance.IncrementDailyEarnings();
         GameManager.gInstance.mHouse.UpdatePrice();
         GameManager.gInstance.mHouse.NotifyFurnishing();
-        DataTransferer.gInstance.SetPlayerMoney(GameManager.gInstance.mPlayer.GetMoney());
+        GameManager.gInstance.AddMoreWorkDays();
     }
 }
