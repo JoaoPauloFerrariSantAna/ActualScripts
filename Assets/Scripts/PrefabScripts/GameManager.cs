@@ -6,9 +6,6 @@ public class GameManager : MonoBehaviour
     private static GameManager mStance;
     public static GameManager gInstance => mStance;
 
-    public TextMeshProUGUI currentMoney;
-    public TextMeshProUGUI currentDay;
-
     public Player mPlayer;
     public House mHouse;
 
@@ -16,8 +13,9 @@ public class GameManager : MonoBehaviour
 
     public static int HousesSold { get; private set; } = 0;
 
-    // NOTE: maybe a money manager
-    public float PriceToFurnishHouse { get; private set; } = InitialValues.InitialPriceToFurnish;
+    // NOTE: maybe create a TimeManager...?
+    public static float DaysPassed { get; private set; } = Constants.InitialDay;
+    public static float MaxDays { get; private set; } = Constants.MaxInGameDays;
 
     void Start()
     {
